@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+#app-panel .app-panel, body {
+  font-family: 'Montserrat'!important;
+}
+.hide {
+  display: none;
+}
+.jumbotron{
+    background-color:transparent!important;
+}
+.container{
+    text-align: center;
+    }
+.header-left {
+  width: 50%;
+  float: left;
+}
+#txcollege h3{
+    color:#F17E24;
+}
+.header-right {
+  width: 50%;
+  float: right;
+}
+.auto-scroll-to-top {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 40px;
+    right: -80px;
+    border-radius: 100%;
+    background-color: #F17E24;
+    color: #fff;
+    font-size: 44px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 55px;
+    -moz-box-shadow: 0 0 5px 0px #010203;
+    -webkit-box-shadow: 0 0 5px 0px #010203;
+    box-shadow: 0 0 5px 0px #010203;
+    transition: 0.3s;
+}
+.auto-scroll-to-top > i.fa.fa-angle-up{
+    top: 2px;
+    left: 11px;
+    position: absolute;
+}
+#app-panel .app-panel, body{
+    background-image: url(http://www.vsu.edu/admissions/tuition-calc/images/pattern1b.png)!important;
+}
+.visible {
+    right: 30px!important;
+    transition: 0.3s!important;
+}
+
+div.content-area :first-child {
+    margin-top: 0!important;
+    border: none!important;
+}
+
+body{
+    color:white!important;
+    background-color:transparent!important;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+select {
+    width: 70%;
+    padding: 8px 20px;
+    margin: 8px;
+    margin-left: auto!important;
+    box-sizing: border-box;
+    background-color: rgba(232, 238, 245, .9);
+    border-radius: 5px;
+    font-size: .9em;
+    margin-right: auto!important;
+    display: block;
+    color: #F17E24!important;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.app-table th{
+    text-align: center;
+}
+.app-table tr{
+    height:50px;
+    border-bottom:1px solid #f2f2f2;
+    width: 100%;
+}
+
+.appContain {
+    position: relative;
+    display: block;
+    text-align: center;
+    top: 7%;
+}
+#bugatti{
+    width:2px;
+    height:2px;
+    position:absolute;
+    top:0;
+    left:0;
+    display:block;
+}
+#bugatti:hover{
+    cursor:pointer;
+}
+.app-panel{
+    background-image: url(http://www.vsu.edu/admissions/tuition-calc/images/pattern1b.png)!important;
+    }
+    
+    @media only screen and (max-width: 880px){
+      .appContain {
+        width: 100%;
+        top:2vh;
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow-x: hid;
+      }
+      .jumbotron{
+          margin-bottom:0!important;
+          padding-top:0!important;
+      }
+      table {
+        font-size:12px;
+        width: 100%;
+}
+    }
