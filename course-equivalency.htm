@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="course-equivalency.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+
+  </head>
+  <body>
+
+ <div ng-app="app" ng-controller="appCtrl" class="container">
+   
+   <h2 id="title">VSU Course Equivalencies <i class="fas fa-expand-arrows-alt" data-toggle="tooltip" title="Toggle Fullscreen"></i></h2>
+   <span>
+     Use our course equivalency tables to check if courses you've completed at other institutions will transfer to Virginia State University.
+   </span><br/><br/>
+ 
+ <!-- beginning of hide div - for future functionality -->
+ <div class="bugatti hide">  
+ <label for="searchState">Select State</label><br/>
+ <select id="searchState" ng-model="searchState" ng-click="initSchool()" ng-init="searchState ='VA'">
+  <option value="AL">Alabama</option>
+    <option value="AK">Alaska</option>
+	<option value="AZ">Arizona</option>
+	<option value="AR">Arkansas</option>
+	<option value="CA">California</option>
+	<option value="CO">Colorado</option>
+	<option value="CT">Connecticut</option>
+	<option value="DE">Delaware</option>
+	<option value="DC">District Of Columbia</option>
+	<option value="FL">Florida</option>
+	<option value="GA">Georgia</option>
+	<option value="HI">Hawaii</option>
+	<option value="ID">Idaho</option>
+	<option value="IL">Illinois</option>
+	<option value="IN">Indiana</option>
+	<option value="IA">Iowa</option>
+	<option value="KS">Kansas</option>
+	<option value="KY">Kentucky</option>
+	<option value="LA">Louisiana</option>
+	<option value="ME">Maine</option>
+	<option value="MD">Maryland</option>
+	<option value="MA">Massachusetts</option>
+	<option value="MI">Michigan</option>
+	<option value="MN">Minnesota</option>
+	<option value="MS">Mississippi</option>
+	<option value="MO">Missouri</option>
+	<option value="MT">Montana</option>
+	<option value="NE">Nebraska</option>
+	<option value="NV">Nevada</option>
+	<option value="NH">New Hampshire</option>
+	<option value="NJ">New Jersey</option>
+	<option value="NM">New Mexico</option>
+	<option value="NY">New York</option>
+	<option value="NC">North Carolina</option>
+	<option value="ND">North Dakota</option>
+	<option value="OH">Ohio</option>
+	<option value="OK">Oklahoma</option>
+	<option value="OR">Oregon</option>
+	<option value="PA">Pennsylvania</option>
+	<option value="RI">Rhode Island</option>
+	<option value="SC">South Carolina</option>
+	<option value="SD">South Dakota</option>
+	<option value="TN">Tennessee</option>
+	<option value="TX">Texas</option>
+	<option value="UT">Utah</option>
+	<option value="VT">Vermont</option>
+	<option value="VA">Virginia</option>
+	<option value="WA">Washington</option>
+	<option value="WV">West Virginia</option>
+	<option value="WI">Wisconsin</option>
+	<option value="WY">Wyoming</option>
+</select><br/><br/>
+</div>
+<!-- end of hide div - for future functionality -->
+
+ <div class="bugatti hide"> 
+ <label for="searchSchool">Select School/System</label><br/>
+ <select id="searchSchool" ng-model="searchSchool" ng-change="getSchoolListing(searchSchool)" ng-click="initSubject()">
+   <option ng-repeat="school in schools | filter: {_source:{schoolstate:searchState}} | orderBy:'-_source.schoolname':'reverse'" value="{{school._source.schoolcode}}">{{school._source.schoolname}}</option>
+ </select><br/><br/>
+ </div>
+<!-- end of dynamic school listing - for future functionality -->
+
+<div class="trainingwheels">
+ <label for="searchSchool-trainingwheels">Select School/System</label><br/>
+ <select id="searchSchool-trainingwheels" ng-model="searchSchool" ng-change="getSchoolListing(searchSchool)" ng-click="initSubject()">
+   <option value="005574">RICHARD BLAND COLLEGE</option>
+   <option value="9999">VA COMMUNITY COLLEGE SYSTEM</option>
+ </select><br/><br/>
+</div>
+
+ <label for="searchCourse">Filter Subject</label><br/>
+ <select id="searchCourse" ng-model="searchCourse">
+   <option value="">All</option>
+   <option ng-repeat="course in courses | orderBy:'-_source.coursesubject':'reverse' | unique:'_source.coursesubject'" value="{{course._source.coursesubject}}">{{course._source.coursesubject}}</option>
+ </select><br/><br/>
+
+   <button id="disabledResults" class="btn btn-success" disabled ng-hide="searchSchool">SHOW RESULTS</button>
+   <button id="showResults" class="btn btn-success" ng-show="searchSchool">SHOW RESULTS</button>
+   <button id="hideResults" class="btn btn-primary hide">HIDE RESULTS</button>
+   <br/><br/>
+  
+
+ <div id="searchResults" class="hide">
+   <div id="txcollege">
+     <h3>{{searchSchool}}</h3>
+   </div>
+  
+        <div class="header-left">Transferring Institution</div>
+        <div class="header-right">VSU Equivalent</div>
+  
+      <table width="100%" class="app-table">
+      <tr>
+        <th>Course #</th>
+        <th>Course name</th> 
+        <th>Credits</th>
+        <th>Course #</th>
+        <th>Course name</th> 
+        <th>Credits</th>
+      </tr>
+
+      <tr ng-repeat="course in courses | filter: {_source:{coursesubject:searchCourse}} | orderBy:['-_source.coursesubject','-_source.coursenumber']:'reverse'">
+                <td>{{course._source.coursesubject}}-{{course._source.coursenumber}}</td>
+                <td>{{course._source.coursetitle}}</td>
+                <td>{{course._source.coursehours}}</td>
+
+                <td>{{course._source.vsucoursesubject}}-{{course._source.vsucoursenumber}}</td>
+                <td>{{course._source.vsucoursetitle}}</td>
+                <td>{{course._source.vsucoursehours}}</td>
+
+            </tr>
+
+   
+    </table>
+
+   </div><br/><br/><!-- end of id="searchResults" -->
+
+   <div class="col-12 jumbotron">
+     <h4>Disclaimer</h4>
+     <span>Lorem ipsum disclaimer text<span>
+     <br/><br/>
+   </div>
+   
+   <div id="bugatti" ng-click="initSchool()"></div>
+ </div><!-- end of app container -->
+             <div class="auto-scroll-to-top">
+            <i class="fa fa-angle-up"></i>
+            <div style=""></div>
+        </div>    
+  </body>
+	     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.17/angular-filter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="course-equivalency.js"></script>
+
+</html>
