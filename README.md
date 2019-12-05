@@ -18,6 +18,7 @@
 ![Chrome](https://img.shields.io/badge/Chrome-compatable-green)
 ![Firefox](https://img.shields.io/badge/Firefox-compatable-green)
 ![Edge](https://img.shields.io/badge/Edge-compatable-green)
+![MIT license](https://img.shields.io/badge/license-mit-blue)
 ---
 
 ## Users
