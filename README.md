@@ -64,7 +64,7 @@ Below demonstrates how to access the full production ready application for refer
 
 ![gif reference](http://g.recordit.co/GqvLzFwNOA.gif)
 
-**The data provided by the product owner is an incomplete list of course credit hours for all higher education institutions.  Please know that all schools outside VA will not have data**
+**The data provided by the product owner is an incomplete list of course credit hours for all higher education institutions.  Please know that not all schools will have course data**
 
 - `#showResults` click functionality is disabled unless a school name is selected via ng-hide or ng-show of disabled/enabled versions of the "Show Results" button
 
