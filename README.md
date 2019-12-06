@@ -67,7 +67,7 @@ The course equivelancy app was developed to be full production ready application
 - Based on selected school name, app factory gets individual school course .json by school code from API
 - Once school is selected, we use the same method of filtering and sorting based on course subject.
 
-* *This functionality is **not** enabled by default per the product owner but can be enabled by clicking a small pixel in the upper left hand corner.  For 'trainingwheels', School selection is defaulted to VCCS and Richard Bland College, as of this version.*
+*\* This functionality is **not** enabled by default per the product owner but can be enabled by clicking a small pixel in the upper left hand corner.  For 'trainingwheels', School selection is defaulted to VCCS and Richard Bland College, as of this version.*
 
 Below demonstrates how to access the full production ready application for reference.  This can be accessed by clicking the upper left hand corner of the document. 
 
