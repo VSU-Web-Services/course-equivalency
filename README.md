@@ -72,6 +72,6 @@ Below demonstrates how to access the full production ready application for refer
    - Searching state and school performs similar functions by click
    - Toggle from full production application and 'trainingwheels' adds hide class to respective classes
 - Toggle fullview is handled by JS for cross-platform compatibility
-	-function `toggleFull` switches fullscreen off or on.  This is implemented in JavaScript for legacy support and cross-platform compatibilty.
+	-function `toggleFull` switches fullscreen off or on.  This is implemented in Vanilla JavaScript for legacy support and cross-platform compatibilty.
 
 ---
