@@ -66,8 +66,9 @@ Below demonstrates how to access the full production ready application for refer
 
 **The data provided by the product owner is an incomplete list of course credit hours for all higher education institutions.  Please know that all schools outside VA will not have data**
 
+- `#showResults` click functionality is disabled unless a school name is selected via ng-hide or ng-show of disabled/enabled versions of the "Show Results" button
+
 - Hiding and showing results is handled by jQuery
-   - `#showResults` click functionality is disabled unless a school name is selected
    - `#showResults` click function removes hide class to `#searchResults` and `#hideResults` (show results button functionality)
    - `#hideResults` click function adds hide class to `#searchResults` and removes class hide from `#showResults` (hide results button functionality)
    - Searching state and school performs similar functions by click
