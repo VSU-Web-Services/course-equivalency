@@ -67,8 +67,9 @@ Below demonstrates how to access the full production ready application for refer
 **The data provided by the product owner is an incomplete list of course credit hours for all higher education institutions.  Please know that all schools outside VA will not have data**
 
 - Hiding and showing results is handled by jQuery
-   - `#showResults` click function removes hide class of `#searchResults` and `#hideResults` (show results button functionality)
-   - `#hideResults` adds hide class to `#searchResults` and removes class hide to `#showResults` (hide results button functionality)
+   - `#showResults` click functionality is disabled unless a school name is selected
+   - `#showResults` click function removes hide class to `#searchResults` and `#hideResults` (show results button functionality)
+   - `#hideResults` click function adds hide class to `#searchResults` and removes class hide from `#showResults` (hide results button functionality)
    - Searching state and school performs similar functions by click
    - Toggle from full production application and 'trainingwheels' adds hide class to respective classes
 - Toggle fullview is handled by JS for cross-platform compatibility
