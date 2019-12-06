@@ -56,22 +56,31 @@ To have a local install of the working project you would need to have the follow
 
 ## Overview
 
-The course equivelancy app was developed to be full production ready application but by default you will see the 'trainingwheels' version which limits searchable schools/systems to VCCS and Richard Bland College.
+The course equivelancy app was developed to be full production ready application but by default you will see the 'trainingwheels' version which limits searchable schools/systems to VCCS and Richard Bland College.  
 
 
 ### Course Eqivelancy Technical Functions
 - source data is provided via Elasticsearch API from live Banner data
 - app controler grabs a singular static school list through http get .json file which has id fields school code, school name, and school state
 - generates searchable school name dropdown by selected state
-  - Angular in HTML dynamically filters and sorts the dropdown menu of school/system based on the state selection entered by user.*
-- Once school is selected, we use the same method of filtering and sorting based on course subject.  
-- based on selected school name, app factory gets individual school course .json by school code from API
-- Toggle fullview is handled by JS for cross-platform compatibility
-- Hiding and showing results is handled by jQuery
+  - Angular in HTML dynamically filters and sorts the dropdown menu of school/system based on the state selection entered by user.*  
+- Based on selected school name, app factory gets individual school course .json by school code from API
+- Once school is selected, we use the same method of filtering and sorting based on course subject.
 
-* *This functionality is **not** enabled by default and is labeled 'bugatti' in order to be separate from default view, 'trainingwheels'. 'trainingwheels' School selection is defaulted to VCCS and Richard Bland College, as of this version.*
+* *This functionality is **not** enabled by default per the product owner but can be enabled by clicking a small pixel in the upper left hand corner.  For 'trainingwheels', School selection is defaulted to VCCS and Richard Bland College, as of this version.*
 
-Below demonstrates how to access the full production ready application for reference.  This can be accessed by clicking the upper left hand corner of the document.
+Below demonstrates how to access the full production ready application for reference.  This can be accessed by clicking the upper left hand corner of the document. 
 
 ![gif reference](http://g.recordit.co/GqvLzFwNOA.gif)
+
+**The data provided by the product owner is an incomplete list of course credit hours for all higher education institutions.  Please know that all schools outside VA will not have data**
+
+- Hiding and showing results is handled by jQuery
+   - `#showResults` click function removes hide class of `#searchResults` and `#hideResults` (show results button functionality)
+   - `#hideResults` adds hide class to `#searchResults` and removes class hide to `#showResults` (hide results button functionality)
+   - Searching state and school performs similar functions by click
+   - Toggle from full production application and 'trainingwheels' adds hide class to respective classes
+- Toggle fullview is handled by JS for cross-platform compatibility
+	-function `toggleFull` switches fullscreen off or on.  This is implemented in JavaScript for legacy support and cross-platform compatibilty.
+
 ---
