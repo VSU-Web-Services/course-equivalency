@@ -71,4 +71,7 @@ The course equivelancy app was developed to be full production ready application
 
 * *This functionality is **not** enabled by default and is labeled 'bugatti' in order to be separate from default view, 'trainingwheels'. 'trainingwheels' School selection is defaulted to VCCS and Richard Bland College, as of this version.*
 
+Below demonstrates how to access the full production ready application for reference.  This can be accessed by clicking the upper left hand corner of the document.
+
+![gif reference](http://g.recordit.co/GqvLzFwNOA.gif)
 ---
