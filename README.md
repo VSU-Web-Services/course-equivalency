@@ -2,15 +2,6 @@
 > A course equivalency application that is used for prospective students
 > for VSU to compare course credits taken from other higher education instituions
 
-**Badges** (placeholder until badges are created)
-- AngularJS
-- jQuery
-- CSS3
-- HTML5
-- Chrome compatable
-- Firefox compatable
-- Edge compatable
-
 ![code AngularJS build](https://img.shields.io/badge/build-AngularJS-brightgreen) 
 ![code jQuery build](https://img.shields.io/badge/build-jQuery-brightgreen)
 ![CSS3](https://img.shields.io/badge/build-CSS3-yellowgreen)
